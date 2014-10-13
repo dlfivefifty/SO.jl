@@ -44,6 +44,6 @@ function tomovie(v::Array;plotfunction=plot,zlims=-1,opts...)
 end
 
 
-ENV["COLUMNS"]=131
+ENV["COLUMNS"]=130
 
 end #module
