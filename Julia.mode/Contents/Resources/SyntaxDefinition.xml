@@ -92,6 +92,7 @@
 							<string>catch</string>
 							<string>else</string>
 							<string>elseif</string>
+							<string>begin</string>							
 							<string>end</string>
 							<string>error</string>
 							<string>for</string>
