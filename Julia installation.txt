@@ -11,6 +11,7 @@ brew doctor
 brew update
 
 brew install gcc
+brew install cmake
 
 #julia
 
