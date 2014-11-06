@@ -1,0 +1,34 @@
+#brew
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+
+brew doctor
+brew update
+
+brew install gcc
+
+#julia
+
+make
+make install
+
+#ipython
+
+
+brew install python
+
+pip install ipython
+pip install pyzmq
+pip install jinja2
+pip install tornado
+pip install matplotlib
+
+
+## Run in Julia
+
+Pkg.add(“IJulia”)
+
+## Run in command line
+
+ipython notebook —-profile julia
