@@ -83,6 +83,8 @@
 							<string>evalin</string>
 							<string>feval</string>
 							<string>function</string>
+							<string>macro</string>							
+							<string>quote</string>								
 							<string>global</string>
 							<string>nargchk</string>
 							<string>persistent</string>

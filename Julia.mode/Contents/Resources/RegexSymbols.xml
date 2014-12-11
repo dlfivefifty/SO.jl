@@ -35,10 +35,19 @@
 		<regex>function [ \t]*([A-Za-z_0-9]+)[ (\n\r]+[^=]+</regex>
     </symbol>
     
+	<symbol id="Julia Macros without Assignment" font-weight="normal" font-style="normal" image="SymbolM" indentation="0" ignoreblocks="yes">
+		<regex>macro [ \t]*([A-Za-z_0-9]+)[ (\n\r]+[^=]+</regex>
+    </symbol>    
+    
 	<!-- Find Julia function definitions without an included "=" sign. -->
 	<symbol id="Julia Types without Assignment" font-weight="normal" font-style="normal" image="SymbolT" indentation="0" ignoreblocks="yes">
 		<regex>type [ \t]*([A-Za-z_0-9]+)[ (\n\r]+[^=]+</regex>
     </symbol>
+    
+	<!-- Find Julia function definitions without an included "=" sign. -->
+	<symbol id="Julia Immutable without Assignment" font-weight="normal" font-style="normal" image="SymbolT" indentation="0" ignoreblocks="yes">
+		<regex>immutable [ \t]*([A-Za-z_0-9]+)[ (\n\r]+[^=]+</regex>
+    </symbol>    
     
     <!-- Find Julia cells. They are indicated by a line starting with
 		double comments "##" -->
