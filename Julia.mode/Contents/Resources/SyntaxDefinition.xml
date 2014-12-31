@@ -55,6 +55,7 @@
             <keywords id="Macros" color="#a20000" useforautocomplete="yes">
                 <string>@assert</string>
                 <string>@inbounds</string>
+                <string>@simd</string>                
                 <string>@eval</string>                
                 <string>@devec</string>                                
             </keywords>
@@ -90,6 +91,7 @@
 							<string>persistent</string>
 							<string>script</string>
 							<string>break</string>
+							<string>new</string>							
 							<string>case</string>
 							<string>catch</string>
 							<string>else</string>
