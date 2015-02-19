@@ -63,6 +63,9 @@
             <keywords id="Keywords" color="#0000b2" useforautocomplete="yes">
             				<regex>(\.\.\.)</regex>
                             <string>export</string>
+                            <string>import</string>                            
+                            <string>string</string>                            
+                            <string>using</string>                                               
                             <string>maximum</string>
                             <string>minimum</string>
                             <string>map</string>
