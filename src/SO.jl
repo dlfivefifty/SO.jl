@@ -46,8 +46,8 @@ end
 
 ## Marthematica
 
-exportmathematica(A::Array)=writecsv("/tmp/juliatowm.csv",A)
-importmathematica()=readcsv("/tmp/juliatowm.csv")
+tomm(A::Array)=writecsv("/tmp/juliatowm.csv",A)
+frommm()=readcsv("/tmp/juliatowm.csv")
 
 
 ENV["COLUMNS"]=130
