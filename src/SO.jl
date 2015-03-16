@@ -1,7 +1,7 @@
 module SO
     using Base
 
-export dotplot, tomovie, chopm,  exportmathematica
+export dotplot, tomovie, chopm,  tomm, fromm
 
 chopm(x::Complex,tol)=abs(imag(x)) < tol ? chopm(real(x)) : chopm(real(x)) + chopm(imag(x))im
 chopm(x::Real,tol)=abs(x-round(x)) < tol ? int(round(x)) : x
