@@ -822,6 +822,7 @@
 							<string>isempt</string> 
 							<!-- new keywords in v.1.2, 2006.02.08 -->  
 							<string>true</string>
+							<string>false</string>							
 							<string>syms</string>
 							<string>isdir</string>
 							<string>cell2mat</string>
