@@ -20,7 +20,8 @@ chopm(x)=chopm(x,1000eps())
 
 ##Plot
 
-dotplot(r;opts...)=Main.PyPlot.scatter(real(r),imag(r);opts...)
+dotplot(r,opts...)=Main.Gadfly.plot(x=real(r),y=imag(r),opts...)
+
 
 function tomovie(v::Array;plotfunction=plot,zlims=-1,opts...)
     tm=string(time_ns())
