@@ -3,7 +3,7 @@ module SO
 
 export dotplot, tomovie, chopm,  tomm, fromm
 
-chopm(x::Complex,tol)=abs(imag(x)) < tol ? chopm(real(x)) : chopm(real(x)) + chopm(imag(x))im
+chopm(x::Complex,tol)=abs(imag(x)) < tol ? chopm(real(x),tol) : chopm(real(x),tol) + chopm(imag(x),tol)im
 chopm(x::Real,tol)=abs(x-round(x)) < tol ? int(round(x)) : x
 chopm(x,tol)=x
 
