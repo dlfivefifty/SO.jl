@@ -4,7 +4,7 @@ module SO
 export dotplot, tomovie, chopm,  tomm, fromm
 
 chopm(x::Complex,tol)=abs(imag(x)) < tol ? chopm(real(x),tol) : chopm(real(x),tol) + chopm(imag(x),tol)im
-chopm(x::Real,tol)=abs(x-round(x)) < tol ? int(round(x)) : x
+chopm(x::Real,tol)=abs(x-round(x)) < tol ? round(Int,x) : x
 chopm(x,tol)=x
 
 chopm(A::Array,tol)=Any[chopm(A[k,j],tol) for k=1:size(A,1), j=1:size(A,2)]
