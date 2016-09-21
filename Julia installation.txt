@@ -18,16 +18,6 @@ brew install cmake
 make
 make install
 
-#ipython
-
-
-brew install python
-
-pip install ipython
-pip install pyzmq
-pip install jinja2
-pip install tornado
-pip install matplotlib
 
 
 ## Run in Julia
@@ -37,4 +27,4 @@ Pkg.add(“IJulia”)
 
 ## Run in command line
 
-ipython notebook —-profile julia
+~/.julia/v0.5/Conda/deps/usr/bin/jupyter notebook
