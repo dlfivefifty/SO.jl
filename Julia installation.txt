@@ -4,7 +4,7 @@ xcode-select --install
 
 #brew
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
 brew doctor
@@ -23,7 +23,33 @@ make install
 ## Run in Julia
 
 Pkg.update()
-Pkg.add(“IJulia”)
+Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations"); Pkg.add("Plots"); Pkg.add("Plotly"); Pkg.add("GR"); Pkg.add("GLVisualize"); 
+
+# Clone packages
+
+
+git clone https://github.com/JuliaMatrices/BandedMatrices.jl /Users/solver/Projects/BandedMatrices
+git clone https://github.com/JuliaApproximation/ApproxFun.jl /Users/solver/Projects/ApproxFun
+git clone https://github.com/JuliaApproximation/RatFun.jl /Users/solver/Projects/RatFun
+git clone https://github.com/JuliaApproximation/SpectralMeasures.jl /Users/solver/Projects/SpectralMeasures
+
+
+
+
+## Copy packages
+
+trash /Users/solver/.julia/v0.6/ApproxFun
+ln -s /Users/solver/Projects/ApproxFun /Users/solver/.julia/v0.6/ApproxFun
+trash /Users/solver/.julia/v0.6/BandedMatrices
+ln -s /Users/solver/Projects/BandedMatrices /Users/solver/.julia/v0.6/BandedMatrices
+trash /Users/solver/.julia/v0.6/SingularIntegralEquations
+ln -s /Users/solver/Projects/SingularIntegralEquations /Users/solver/.julia/v0.6/SingularIntegralEquations
+trash /Users/solver/.julia/v0.6/FastTransforms
+ln -s /Users/solver/Projects/FastTransforms /Users/solver/.julia/v0.6/FastTransforms
+trash /Users/solver/.julia/v0.6/FastGaussQuadrature
+ln -s /Users/solver/Projects/FastGaussQuadrature /Users/solver/.julia/v0.6/FastGaussQuadrature
+ln -s /Users/solver/Projects/RatFun /Users/solver/.julia/v0.6/RatFun
+ln -s /Users/solver/Projects/SpectralMeasures /Users/solver/.julia/v0.6/SpectralMeasures
 
 ## Run in command line
 
