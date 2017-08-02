@@ -32,7 +32,9 @@ git clone https://github.com/JuliaMatrices/BandedMatrices.jl /Users/solver/Proje
 git clone https://github.com/JuliaApproximation/ApproxFun.jl /Users/solver/Projects/ApproxFun
 git clone https://github.com/JuliaApproximation/RatFun.jl /Users/solver/Projects/RatFun
 git clone https://github.com/JuliaApproximation/SpectralMeasures.jl /Users/solver/Projects/SpectralMeasures
-git clone https://github.com/JuliaApproximation/SO.jl /Users/solver/Projects/SO.jl
+git clone https://github.com/JuliaApproximation/MultivariateOrthogonalPolynomials.jl /Users/solver/Projects/MultivariateOrthogonalPolynomials
+git clone https://github.com/dlfivefifty/SO.jl /Users/solver/Projects/SO.jl
+
 
 
 
@@ -51,6 +53,7 @@ trash /Users/solver/.julia/v0.6/FastGaussQuadrature
 ln -s /Users/solver/Projects/FastGaussQuadrature /Users/solver/.julia/v0.6/FastGaussQuadrature
 ln -s /Users/solver/Projects/RatFun /Users/solver/.julia/v0.6/RatFun
 ln -s /Users/solver/Projects/SpectralMeasures /Users/solver/.julia/v0.6/SpectralMeasures
+ln -s /Users/solver/Projects/MultivariateOrthogonalPolynomials /Users/solver/.julia/v0.6/MultivariateOrthogonalPolynomials
 ln -s /Users/solver/Projects/SO.jl /Users/solver/.julia/v0.6/SO
 
 ## Run in command line
