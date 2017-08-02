@@ -13,21 +13,11 @@ brew update
 brew install gcc
 brew install cmake
 
-#julia
 
-make
-make install
-
-
-
-## Run in Julia
-
-Pkg.update()
-Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations"); Pkg.add("Plots"); Pkg.add("Plotly"); Pkg.add("GR"); Pkg.add("GLVisualize"); 
 
 # Clone packages
 
-
+git clone https://github.com/JuliaLang/julia /Users/solver/Projects/julia
 git clone https://github.com/JuliaMatrices/BandedMatrices.jl /Users/solver/Projects/BandedMatrices
 git clone https://github.com/JuliaApproximation/ApproxFun.jl /Users/solver/Projects/ApproxFun
 git clone https://github.com/JuliaApproximation/RatFun.jl /Users/solver/Projects/RatFun
@@ -36,7 +26,19 @@ git clone https://github.com/JuliaApproximation/MultivariateOrthogonalPolynomial
 git clone https://github.com/dlfivefifty/SO.jl /Users/solver/Projects/SO.jl
 
 
+#julia
 
+cp /Users/solver/Projects/SO.jl/Make.user /Users/solver/Projects/julia/
+cd /Users/solver/Projects/julia/
+make
+
+>>>>>>> 50ec8df544480070ab217f8cd1b84df3026439cd
+
+
+## Run in Julia
+
+Pkg.update()
+Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations"); Pkg.add("Plots"); Pkg.add("Plotly"); Pkg.add("GR"); Pkg.add("GLVisualize"); 
 
 
 ## Copy packages
@@ -58,4 +60,4 @@ ln -s /Users/solver/Projects/SO.jl /Users/solver/.julia/v0.6/SO
 
 ## Run in command line
 
-~/.julia/v0.5/Conda/deps/usr/bin/jupyter notebook
+~/.julia/v0.6/Conda/deps/usr/bin/jupyter notebook

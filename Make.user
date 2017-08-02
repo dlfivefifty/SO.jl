@@ -1,0 +1,2 @@
+override USE_SYSTEM_BLAS = 1
+override USE_SYSTEM_LAPACK = 0
