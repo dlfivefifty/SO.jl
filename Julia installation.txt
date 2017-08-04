@@ -17,14 +17,27 @@ brew install cmake
 
 # Clone packages
 
+
+
+git clone https://github.com/dlfivefifty/SO.jl $HOME/Projects/SO.jl
 git clone https://github.com/JuliaLang/julia $HOME/Projects/julia
 git clone https://github.com/JuliaMatrices/BandedMatrices.jl $HOME/Projects/BandedMatrices
-git clone https://github.com/JuliaApproximation/ApproxFun.jl $HOME/Projects/ApproxFun
-git clone https://github.com/JuliaApproximation/SingularIntegralEquations.jl $HOME/Projects/SingularIntegralEquation
-git clone https://github.com/JuliaApproximation/RatFun.jl $HOME/Projects/RatFun
-git clone https://github.com/JuliaApproximation/SpectralMeasures.jl $HOME/Projects/SpectralMeasures
-git clone https://github.com/JuliaApproximation/MultivariateOrthogonalPolynomials.jl $HOME/Projects/MultivariateOrthogonalPolynomials
-git clone https://github.com/dlfivefifty/SO.jl $HOME/Projects/SO.jl
+
+
+CMTY=JuliaApproximation
+for PKG in ApproxFun SingularIntegralEquations RatFun SpectralMeasures MultivariateOrthogonalPolynomials
+do
+	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+done
+
+CMTY=MikaelSlevinsky
+PKG=FastTransforms
+git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+
+
+CMTY=ajt60gaibb
+PKG=FastGaussQuadrature
+git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
 
 
 #julia
@@ -44,21 +57,21 @@ Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations"); Pkg.add("Plots"); Pkg.a
 
 ## Copy packages
 
-trash $HOME/.julia/v0.6/ApproxFun
-ln -s $HOME/Projects/ApproxFun $HOME/.julia/v0.6/ApproxFun
-trash $HOME/.julia/v0.6/BandedMatrices
-ln -s $HOME/Projects/BandedMatrices $HOME/.julia/v0.6/BandedMatrices
-trash $HOME/.julia/v0.6/SingularIntegralEquations
-ln -s $HOME/Projects/SingularIntegralEquations $HOME/.julia/v0.6/SingularIntegralEquations
-trash $HOME/.julia/v0.6/FastTransforms
-ln -s $HOME/Projects/FastTransforms $HOME/.julia/v0.6/FastTransforms
-trash $HOME/.julia/v0.6/FastGaussQuadrature
-ln -s $HOME/Projects/FastGaussQuadrature $HOME/.julia/v0.6/FastGaussQuadrature
-ln -s $HOME/Projects/RatFun $HOME/.julia/v0.6/RatFun
-ln -s $HOME/Projects/SpectralMeasures $HOME/.julia/v0.6/SpectralMeasures
-ln -s $HOME/Projects/MultivariateOrthogonalPolynomials $HOME/.julia/v0.6/MultivariateOrthogonalPolynomials
+
+VERS=0.7
+for PKG in BandedMatrices FastTransforms FastGaussQuadrature ApproxFun SingularIntegralEquations
+do
+	trash $HOME/.julia/v$VERS/$PKG
+	ln -s $HOME/Projects/$PKG $HOME/.julia/v$VERS/$PKG
+done
+
+for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials
+do
+	ln -s $HOME/Projects/$PKG $HOME/.julia/v$VERS/$PKG
+done
+
 ln -s $HOME/Projects/SO.jl $HOME/.julia/v0.6/SO
 
 ## Run in command line
 
-~/.julia/v0.6/Conda/deps/usr/bin/jupyter notebook
+~/.julia/v$VERS/Conda/deps/usr/bin/jupyter notebook
