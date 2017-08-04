@@ -46,7 +46,6 @@ cp $HOME/Projects/SO.jl/Make.user $HOME/Projects/julia/
 cd $HOME/Projects/julia/
 make
 
->>>>>>> 50ec8df544480070ab217f8cd1b84df3026439cd
 
 
 ## Run in Julia
