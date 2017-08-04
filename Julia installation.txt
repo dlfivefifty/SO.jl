@@ -17,19 +17,20 @@ brew install cmake
 
 # Clone packages
 
-git clone https://github.com/JuliaLang/julia /Users/solver/Projects/julia
-git clone https://github.com/JuliaMatrices/BandedMatrices.jl /Users/solver/Projects/BandedMatrices
-git clone https://github.com/JuliaApproximation/ApproxFun.jl /Users/solver/Projects/ApproxFun
-git clone https://github.com/JuliaApproximation/RatFun.jl /Users/solver/Projects/RatFun
-git clone https://github.com/JuliaApproximation/SpectralMeasures.jl /Users/solver/Projects/SpectralMeasures
-git clone https://github.com/JuliaApproximation/MultivariateOrthogonalPolynomials.jl /Users/solver/Projects/MultivariateOrthogonalPolynomials
-git clone https://github.com/dlfivefifty/SO.jl /Users/solver/Projects/SO.jl
+git clone https://github.com/JuliaLang/julia $HOME/Projects/julia
+git clone https://github.com/JuliaMatrices/BandedMatrices.jl $HOME/Projects/BandedMatrices
+git clone https://github.com/JuliaApproximation/ApproxFun.jl $HOME/Projects/ApproxFun
+git clone https://github.com/JuliaApproximation/SingularIntegralEquations.jl $HOME/Projects/SingularIntegralEquation
+git clone https://github.com/JuliaApproximation/RatFun.jl $HOME/Projects/RatFun
+git clone https://github.com/JuliaApproximation/SpectralMeasures.jl $HOME/Projects/SpectralMeasures
+git clone https://github.com/JuliaApproximation/MultivariateOrthogonalPolynomials.jl $HOME/Projects/MultivariateOrthogonalPolynomials
+git clone https://github.com/dlfivefifty/SO.jl $HOME/Projects/SO.jl
 
 
 #julia
 
-cp /Users/solver/Projects/SO.jl/Make.user /Users/solver/Projects/julia/
-cd /Users/solver/Projects/julia/
+cp $HOME/Projects/SO.jl/Make.user $HOME/Projects/julia/
+cd $HOME/Projects/julia/
 make
 
 >>>>>>> 50ec8df544480070ab217f8cd1b84df3026439cd
@@ -43,20 +44,20 @@ Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations"); Pkg.add("Plots"); Pkg.a
 
 ## Copy packages
 
-trash /Users/solver/.julia/v0.6/ApproxFun
-ln -s /Users/solver/Projects/ApproxFun /Users/solver/.julia/v0.6/ApproxFun
-trash /Users/solver/.julia/v0.6/BandedMatrices
-ln -s /Users/solver/Projects/BandedMatrices /Users/solver/.julia/v0.6/BandedMatrices
-trash /Users/solver/.julia/v0.6/SingularIntegralEquations
-ln -s /Users/solver/Projects/SingularIntegralEquations /Users/solver/.julia/v0.6/SingularIntegralEquations
-trash /Users/solver/.julia/v0.6/FastTransforms
-ln -s /Users/solver/Projects/FastTransforms /Users/solver/.julia/v0.6/FastTransforms
-trash /Users/solver/.julia/v0.6/FastGaussQuadrature
-ln -s /Users/solver/Projects/FastGaussQuadrature /Users/solver/.julia/v0.6/FastGaussQuadrature
-ln -s /Users/solver/Projects/RatFun /Users/solver/.julia/v0.6/RatFun
-ln -s /Users/solver/Projects/SpectralMeasures /Users/solver/.julia/v0.6/SpectralMeasures
-ln -s /Users/solver/Projects/MultivariateOrthogonalPolynomials /Users/solver/.julia/v0.6/MultivariateOrthogonalPolynomials
-ln -s /Users/solver/Projects/SO.jl /Users/solver/.julia/v0.6/SO
+trash $HOME/.julia/v0.6/ApproxFun
+ln -s $HOME/Projects/ApproxFun $HOME/.julia/v0.6/ApproxFun
+trash $HOME/.julia/v0.6/BandedMatrices
+ln -s $HOME/Projects/BandedMatrices $HOME/.julia/v0.6/BandedMatrices
+trash $HOME/.julia/v0.6/SingularIntegralEquations
+ln -s $HOME/Projects/SingularIntegralEquations $HOME/.julia/v0.6/SingularIntegralEquations
+trash $HOME/.julia/v0.6/FastTransforms
+ln -s $HOME/Projects/FastTransforms $HOME/.julia/v0.6/FastTransforms
+trash $HOME/.julia/v0.6/FastGaussQuadrature
+ln -s $HOME/Projects/FastGaussQuadrature $HOME/.julia/v0.6/FastGaussQuadrature
+ln -s $HOME/Projects/RatFun $HOME/.julia/v0.6/RatFun
+ln -s $HOME/Projects/SpectralMeasures $HOME/.julia/v0.6/SpectralMeasures
+ln -s $HOME/Projects/MultivariateOrthogonalPolynomials $HOME/.julia/v0.6/MultivariateOrthogonalPolynomials
+ln -s $HOME/Projects/SO.jl $HOME/.julia/v0.6/SO
 
 ## Run in command line
 
