@@ -57,7 +57,7 @@ Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations"); Pkg.add("Plots"); Pkg.a
 ## Copy packages
 
 
-VERS=0.7
+VERS=0.6
 for PKG in BandedMatrices FastTransforms FastGaussQuadrature ApproxFun SingularIntegralEquations
 do
 	trash $HOME/.julia/v$VERS/$PKG
