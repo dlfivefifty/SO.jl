@@ -25,9 +25,11 @@ git clone https://github.com/JuliaMatrices/BandedMatrices.jl $HOME/Projects/Band
 
 
 CMTY=JuliaApproximation
-for PKG in ApproxFun SingularIntegralEquations RatFun SpectralMeasures MultivariateOrthogonalPolynomials
+for PKG in ApproxFun SingularIntegralEquations RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert
 do
-	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+	if [ ! -d $HOME/Projects/$PKG ]; then
+		git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+	fi
 done
 
 CMTY=MikaelSlevinsky
@@ -64,9 +66,11 @@ do
 	ln -s $HOME/Projects/$PKG $HOME/.julia/v$VERS/$PKG
 done
 
-for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials
+for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert
 do
-	ln -s $HOME/Projects/$PKG $HOME/.julia/v$VERS/$PKG
+	if [ ! -d $HOME/.jlia/v$VERS/$PKG ]; then
+		ln -s $HOME/Projects/$PKG $HOME/.julia/v$VERS/$PKG
+	fi
 done
 
 ln -s $HOME/Projects/SO.jl $HOME/.julia/v0.6/SO
