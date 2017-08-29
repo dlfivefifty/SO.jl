@@ -59,17 +59,17 @@ Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations"); Pkg.add("Plots"); Pkg.a
 ## Copy packages
 
 
-VERS=0.6
 for PKG in BandedMatrices FastTransforms FastGaussQuadrature ApproxFun SingularIntegralEquations
 do
-	trash $HOME/.julia/v$VERS/$PKG
-	ln -s $HOME/Projects/$PKG $HOME/.julia/v$VERS/$PKG
+	trash $HOME/.julia/v$JULIA_VERSION/$PKG
+	ln -s $HOME/Projects/$PKG $HOME/.julia/v$JULIA_VERSION/$PKG
 done
+
 
 for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert
 do
-	if [ ! -d $HOME/.jlia/v$VERS/$PKG ]; then
-		ln -s $HOME/Projects/$PKG $HOME/.julia/v$VERS/$PKG
+	if [ ! -d $HOME/.julia/v$JULIA_VERSION/$PKG ]; then
+		ln -s $HOME/Projects/$PKG $HOME/.julia/v$JULIA_VERSION/$PKG
 	fi
 done
 
@@ -77,4 +77,4 @@ ln -s $HOME/Projects/SO.jl $HOME/.julia/v0.6/SO
 
 ## Run in command line
 
-~/.julia/v$VERS/Conda/deps/usr/bin/jupyter notebook
+~/.julia/v$JULIA_VERSION/Conda/deps/usr/bin/jupyter notebook
