@@ -1,5 +1,5 @@
 module SO
-    using Base
+    using Base, ApproxFun, Juno
 
 export dotplot, tomovie, chopm,  tomm, fromm
 
@@ -52,5 +52,7 @@ frommm()=readcsv("/tmp/juliatowm.csv")
 
 
 ENV["COLUMNS"]=130
+
+Juno.render(i::Juno.Inline,f::Fun) = string(f)
 
 end #module
