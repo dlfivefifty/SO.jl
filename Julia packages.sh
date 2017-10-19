@@ -29,11 +29,12 @@ fi
 
 
 CMTY=MikaelSlevinsky
-PKG=FastTransforms
-if [ ! -d $HOME/Projects/$PKG ]; then
-	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-fi
-
+for PKG in HierarchicalMatrices FastTransforms
+do
+	if [ ! -d $HOME/Projects/$PKG ]; then
+		git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+	fi
+done
 
 CMTY=ajt60gaibb
 PKG=FastGaussQuadrature
@@ -41,6 +42,12 @@ if [ ! -d $HOME/Projects/$PKG ]; then
 	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
 fi
 
+
+CMTY=JuliaMath
+PKG=RandomMatrices
+if [ ! -d $HOME/Projects/$PKG ]; then
+	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+fi
 
 CMTY=daanhb
 PKG=Domains
@@ -59,11 +66,7 @@ julia -e 'Pkg.update(); Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations");
 ## Copy packages
 
 
-for PKG in BandedMatrices FastTransforms FastGaussQuadrature ApproxFun SingularIntegralEquations
-do
-	trash $HOME/.julia/v$JULIA_VERSION/$PKG
-	ln -s $HOME/Projects/$PKG $HOME/.julia/v$JULIA_VERSION/$PKG
-done
+                     c 
 
 
 for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert Domains
