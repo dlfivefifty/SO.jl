@@ -48,6 +48,12 @@ if [ ! -d $HOME/Projects/$PKG ]; then
 	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
 fi
 
+CMTY=dlfivefifty
+PKG=ComplexPhasePortrait
+if [ ! -d $HOME/Projects/$PKG ]; then
+	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+fi
+
 
 
 
@@ -66,7 +72,7 @@ do
 done
 
 
-for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert Domains
+for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert Domains ComplexPhasePortrait
 do
 	if [ ! -d $HOME/.julia/v$JULIA_VERSION/$PKG ]; then
 		ln -s $HOME/Projects/$PKG $HOME/.julia/v$JULIA_VERSION/$PKG
