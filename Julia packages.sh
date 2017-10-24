@@ -22,11 +22,12 @@ done
 
 
 CMTY=JuliaMatrices
-PKG=BandedMatrices
-if [ ! -d $HOME/Projects/$PKG ]; then
-	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-fi
-
+for PKG in BandedMatrices BlockBandedMatrices
+do
+	if [ ! -d $HOME/Projects/$PKG ]; then
+		git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
+	fi
+done
 
 CMTY=MikaelSlevinsky
 for PKG in HierarchicalMatrices FastTransforms
@@ -72,10 +73,7 @@ julia -e 'Pkg.update(); Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations");
 ## Copy packages
 
 
-                     c 
-
-
-for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert Domains ComplexPhasePortrait
+for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert Domains ComplexPhasePortrait BlockBandedMatrices
 do
 	if [ ! -d $HOME/.julia/v$JULIA_VERSION/$PKG ]; then
 		ln -s $HOME/Projects/$PKG $HOME/.julia/v$JULIA_VERSION/$PKG
