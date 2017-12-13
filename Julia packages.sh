@@ -13,7 +13,7 @@ fi
 
 
 CMTY=JuliaApproximation
-for PKG in ApproxFun SingularIntegralEquations RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert
+for PKG in ApproxFun SingularIntegralEquations RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert OscillatoryIntegrals
 do
 	if [ ! -d $HOME/Projects/$PKG ]; then
 		git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
@@ -73,7 +73,7 @@ julia -e 'Pkg.update(); Pkg.add("IJulia"); Pkg.add("SingularIntegralEquations");
 ## Copy packages
 
 
-for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert Domains ComplexPhasePortrait BlockBandedMatrices
+for PKG in RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert Domains ComplexPhasePortrait BlockBandedMatrices OscillatoryIntegrals
 do
 	if [ ! -d $HOME/.julia/v$JULIA_VERSION/$PKG ]; then
 		ln -s $HOME/Projects/$PKG $HOME/.julia/v$JULIA_VERSION/$PKG
