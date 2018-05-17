@@ -6,61 +6,46 @@
 if [ ! -d $HOME/Projects/SO.jl ]; then
 	git clone https://github.com/dlfivefifty/SO.jl $HOME/Projects/SO.jl
 fi
-if [ ! -d $HOME/Projects/julia ]; then
-	git clone https://github.com/JuliaLang/julia $HOME/Projects/julia
+if [ ! -d $HOME/.julia/v$JULIA_VERSION/SO ]; then
+ln -s $HOME/Projects/SO.jl $HOME/.julia/v$JULIA_VERSION/SO
 fi
-
 
 
 CMTY=JuliaApproximation
 for PKG in ApproxFun SingularIntegralEquations RatFun SpectralMeasures MultivariateOrthogonalPolynomials RiemannHilbert OscillatoryIntegrals
 do
-	if [ ! -d $HOME/Projects/$PKG ]; then
-		git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-	fi
+    $HOME/Projects/SO.jl/clonejuliapkg.sh $CMTY $PKG
 done
 
 
 CMTY=JuliaMatrices
 for PKG in BandedMatrices BlockBandedMatrices
 do
-	if [ ! -d $HOME/Projects/$PKG ]; then
-		git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-	fi
+	$HOME/Projects/SO.jl/clonejuliapkg.sh $CMTY $PKG
 done
 
 CMTY=MikaelSlevinsky
 for PKG in HierarchicalMatrices FastTransforms
 do
-	if [ ! -d $HOME/Projects/$PKG ]; then
-		git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-	fi
+	$HOME/Projects/SO.jl/clonejuliapkg.sh $CMTY $PKG
 done
 
 CMTY=ajt60gaibb
 PKG=FastGaussQuadrature
-if [ ! -d $HOME/Projects/$PKG ]; then
-	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-fi
+$HOME/Projects/SO.jl/clonejuliapkg.sh $CMTY $PKG
 
 
 CMTY=JuliaMath
 PKG=RandomMatrices
-if [ ! -d $HOME/Projects/$PKG ]; then
-	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-fi
+$HOME/Projects/SO.jl/clonejuliapkg.sh $CMTY $PKG
 
 CMTY=daanhb
 PKG=Domains
-if [ ! -d $HOME/Projects/$PKG ]; then
-	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-fi
+$HOME/Projects/SO.jl/clonejuliapkg.sh $CMTY $PKG
 
-CMTY=dlfivefifty
+CMTY=JuliaHolomorphic
 PKG=ComplexPhasePortrait
-if [ ! -d $HOME/Projects/$PKG ]; then
-	git clone https://github.com/$CMTY/$PKG.jl $HOME/Projects/$PKG
-fi
+$HOME/Projects/SO.jl/clonejuliapkg.sh $CMTY $PKG
 
 
 
