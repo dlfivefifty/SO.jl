@@ -7,4 +7,8 @@ if [ -d $HOME/.julia/v0.6/$2 ]; then
 	rm -rf $HOME/.julia/v0.6/$2
 fi
 ln -s $HOME/Projects/$2.jl $HOME/.julia/v0.6/$2
-$HOME/Projects/julia7/julia -e "Pkg.develop(\"$HOME/Projects/$2.jl\")"
+
+
+
+/Applications/Julia-0.7.app/Contents/Resources/julia/bin/julia -e "Pkg.develop(\"$HOME/Projects/$2.jl\")"
+/Applications/Julia-1.0.app/Contents/Resources/julia/bin/julia -e "Pkg.develop(\"$HOME/Projects/$2.jl\")"
