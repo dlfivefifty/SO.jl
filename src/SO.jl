@@ -9,7 +9,7 @@ chopm(x,tol)=x
 
 chopm(A::Array,tol)=Any[chopm(A[k,j],tol) for k=1:size(A,1), j=1:size(A,2)]
 
-chopm(B::AbstractArray,tol)=chopm(full(B),tol)
+chopm(B::AbstractArray,tol)=chopm(Matrix(B),tol)
 
 
 
