@@ -20,6 +20,11 @@ cp $HOME/Projects/SO.jl/Make.user $HOME/Projects/julia/
 cd $HOME/Projects/julia/
 make
 
+ln -sf /opt/intel/compilers_and_libraries_2018.3.185/mac/mkl/lib/libmkl_rt.dylib  usr/lib/julia/libmkl_rt.dylib
+
+ln -sf /opt/intel/compilers_and_libraries_2018.3.185/mac/mkl/lib/libmkl_intel_thread.dylib  usr/lib/julia/libmkl_intel_thread.dylib
+
+make
 
 
 ## Run in Julia
