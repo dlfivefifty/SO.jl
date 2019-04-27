@@ -11,7 +11,7 @@ catch ex
 end
 
 try # avoid bug in building packages
-	isfile("Project.toml") && Pkg.activate(".") # auto-activate Project in Juno
+	isfile("Manifest.toml") && Pkg.activate(".") # auto-activate Project in Juno
 catch ex
 	println("$ex thrown during startup")
 end
