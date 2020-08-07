@@ -16,5 +16,14 @@ catch ex
 	println("$ex thrown during startup")
 end
 
+try
+	import Debugger
+catch ex
+	println("$ex thrown during startup")
+end
 
-linspace(a,b,n) = range(a; stop=b, length=n)
+macro ent(args)
+	quote
+	   Debugger.@enter $args
+	end
+end
