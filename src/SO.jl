@@ -1,7 +1,7 @@
 module SO
     using Base, ApproxFun, Juno
 
-export dotplot, tomovie, chopm,  tomm, fromm
+export dotplot, tomovie, chopm,  tomm, fromm, latex2unicode
 
 chopm(x::Complex,tol)=abs(imag(x)) < tol ? chopm(real(x),tol) : chopm(real(x),tol) + chopm(imag(x),tol)im
 chopm(x::Real,tol)=abs(x-round(x)) < tol ? round(Int,x) : x
@@ -54,5 +54,17 @@ frommm()=readcsv("/tmp/juliatowm.csv")
 ENV["COLUMNS"]=130
 
 Juno.render(i::Juno.Inline,f::Fun) = string(f)
+
+let changevals = ("ℓ", "⊕", "⊗", "⊤", "→", "×", "…", "⋯", "⋱", "⋮", string.('α':'ω')...)
+    global function latex2julia(str)
+        for k in sort(collect(keys(REPL.REPLCompletions.latex_symbols)); lt=(x,y) -> !isless(length(x),length(y)))
+            v = REPL.REPLCompletions.latex_symbols[k]
+            if v in changevals
+                str = replace(str, k => v)
+            end
+        end
+        str
+    end
+end
 
 end #module
