@@ -55,7 +55,7 @@ ENV["COLUMNS"]=130
 
 Juno.render(i::Juno.Inline,f::Fun) = string(f)
 
-let changevals = ("ℝ", "ℂ", "ℤ", "≅", "≥", "≤", "±", "⊢", "∈", "⊂", "≠", "ℓ", "⊕", "⊗", "⊤", "→", "×", "…", "⋯", "⋱", "⋮", "∞", string.('𝐚':'𝐳')..., string.('α':'ω')..., string.('Α':'Ω')...)
+let changevals = ("ℝ", "ℂ", "ℤ", "≅", "≥", "≤", "±", "⊢", "∈", "⊂", "≠", "ℓ", "⊕", "⊗", "⊤", "→", "×", "…", "⋯", "⋱", "⋮", "∞", "□", string.('𝐚':'𝐳')..., string.('α':'ω')..., string.('Α':'Ω')...)
     global function latex2unicode(str)
         for k in sort(collect(keys(REPL.REPLCompletions.latex_symbols)); lt=(x,y) -> !isless(length(x),length(y)))
             v = REPL.REPLCompletions.latex_symbols[k]

@@ -1,0 +1,4 @@
+name = "SO"
+uuid = "e8c479a0-891b-4610-809e-f646bdc25fc0"
+authors = ["Sheehan Olver <solver@mac.com>"]
+version = "0.1.0"
